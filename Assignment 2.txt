@@ -1,0 +1,125 @@
+1.Write a function “insert_any()” for inserting a node at any given position of the linked list. Assume
+position starts at 0.
+
+ans;
+
+insert_any() {
+
+int pos ,i =1;
+Struct node {
+int data;
+Struct node * next;
+}
+ Struct * head,*newnode,*temp,count;
+printf("enter the position");
+Scanf("%d",&pos);
+if(pos>count)
+{
+pf("error invalid position");
+}
+else
+{
+temp = head;
+while(i<pos)
+{
+temp = temp-> next;
+i++;
+}
+newnode =(Struct node *)malloc(size of(Struct node);
+printf("enter the data');
+Scanf("%d",&newnode->data);
+newnode->next = temp->next;
+temp->next = newnode;
+}
+
+
+
+
+
+2.Write a function “delete_beg()” for deleting a node from the beginning of the linked list.
+
+ans
+ 
+Struct node*head;
+
+delete_beg()
+ {
+ Struct node*temp;
+	temp = head;
+	head= temp->next;
+	free(temp);
+}
+
+
+
+
+3.Write a function “delete_end()” for deleting a node from the end of the linked list.
+ 
+
+delete_end() {
+
+ Struct node*temp,*prev;
+temp = head;
+while(temp->next != = 0)
+{
+prev=temp;
+temp = temp->next;
+
+if(temp==head){
+head = 0;
+}
+else {
+prev->next=0;
+}
+free(temp);
+}
+
+
+
+
+4Q
+
+In the Binary Search algorithm, it is suggested to calculate the mid as beg + (end - beg) / 2
+instead of (beg + end) / 2. Why is it so?
+
+	
+
+ans:
+
+Because left + right may overflow. Which then means you get a result that is less than left. Or far into the negative if you are using signed integers.
+
+So instead they take the distance between left and right and add half of that to left. This is only a single extra operation to make the algorithm more robust.
+
+
+5Q
+
+
+
+Write the algorithm/function for Ternary Search.
+
+
+
+int ternarySearch(int a[], int start, int end, int key) {
+   if(start <= end) {
+      int midF = (start + (end - start) /3); 
+       int midS = (midF + (end - start) /3); 
+        if(a[midF] == key)
+         return midF;
+      	if(a[midS] == key)
+         return midS;
+     if(key < a[midF])
+         return ternarySearch(a, start, midF-1, key);
+    if(key > a[midS])
+         return ternarySearch(a, midS+1, end, key);
+      return ternarySearch(array, midF+1, midS-1, key);
+   }
+   return -1;
+}
+
+
+
+
+
+
+
+
